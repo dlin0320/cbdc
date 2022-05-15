@@ -1,0 +1,50 @@
+[INFO ] 2021-08-16T05:02:26,667 [main] CbdcApplication$Companion - No active profile set, falling back to default profiles: default
+[INFO ] 2021-08-16T05:02:27,480 [main] GenericScope - BeanFactory id=967267b7-2f40-3e7a-8ba8-162490f4c3a5
+[INFO ] 2021-08-16T05:02:27,958 [main] JettyServletWebServerFactory - Server initialized with port: 8080
+[INFO ] 2021-08-16T05:02:28,003 [main] ContextLoader - Root WebApplicationContext: initialization completed in 1298 ms
+[DEBUG] 2021-08-16T05:02:28,247 [main] CordaService - [BaseCordaService] Registering Corda OnConnection Handler
+[DEBUG] 2021-08-16T05:02:28,302 [main] CordaService - State caching is banned forever until server restarts
+[INFO ] 2021-08-16T05:02:28,567 [main] UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: e8fc1ecb-03aa-4d2e-a039-f335dee4508a
+
+[INFO ] 2021-08-16T05:02:28,692 [main] DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@abad89c, org.springframework.security.web.context.SecurityContextPersistenceFilter@67fa5045, org.springframework.security.web.header.HeaderWriterFilter@738d37fc, org.springframework.security.web.authentication.logout.LogoutFilter@61ffd148, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5974b233, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5a7df831, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@602f8f94, org.springframework.security.web.session.SessionManagementFilter@5ff00507, org.springframework.security.web.access.ExceptionTranslationFilter@c1050f2]
+[WARN ] 2021-08-16T05:02:28,713 [main] ArchaiusAutoConfiguration - No spring.application.name found, defaulting to 'application'
+[WARN ] 2021-08-16T05:02:28,722 [main] URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+[WARN ] 2021-08-16T05:02:28,734 [main] URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+[INFO ] 2021-08-16T05:02:28,910 [main] ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+[INFO ] 2021-08-16T05:02:29,741 [main] DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] 2021-08-16T05:02:29,749 [main] DispatcherServlet - Completed initialization in 8 ms
+[INFO ] 2021-08-16T05:02:29,794 [main] JettyWebServer - Jetty started on port(s) 8080 (http/1.1) with context path '/'
+[INFO ] 2021-08-16T05:02:29,795 [main] OnStartupService - Connecting to corda...
+[INFO ] 2021-08-16T05:02:29,797 [main] CordaService - Attempting upstream RPC to node: 'localhost:10021'
+[INFO ] 2021-08-16T05:02:33,434 [main] CordaService - Successful connection. Creating proxy...
+[DEBUG] 2021-08-16T05:02:33,435 [main] CordaService - [BaseCordaService] Corda connection available, initializing!
+[INFO ] 2021-08-16T05:02:33,435 [main] OnStartupService - Corda connected!
+[INFO ] 2021-08-16T05:02:33,438 [main] CbdcApplication$Companion - Started CbdcApplication.Companion in 8.198 seconds (JVM running for 9.211)
+[INFO ] 2021-08-16T05:06:27,007 [SpringContextShutdownHook] ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+[INFO ] 2021-08-16T05:10:11,171 [main] CbdcApplication$Companion - No active profile set, falling back to default profiles: default
+[INFO ] 2021-08-16T05:10:11,998 [main] GenericScope - BeanFactory id=967267b7-2f40-3e7a-8ba8-162490f4c3a5
+[INFO ] 2021-08-16T05:10:12,416 [main] JettyServletWebServerFactory - Server initialized with port: 8080
+[INFO ] 2021-08-16T05:10:12,461 [main] ContextLoader - Root WebApplicationContext: initialization completed in 1266 ms
+[DEBUG] 2021-08-16T05:10:12,660 [main] CordaService - [BaseCordaService] Registering Corda OnConnection Handler
+[DEBUG] 2021-08-16T05:10:12,705 [main] CordaService - State caching is banned forever until server restarts
+[INFO ] 2021-08-16T05:10:12,982 [main] UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 39f7717c-7c16-4939-a85f-55fdb6113743
+
+[INFO ] 2021-08-16T05:10:13,127 [main] DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7741771e, org.springframework.security.web.context.SecurityContextPersistenceFilter@7fedb795, org.springframework.security.web.header.HeaderWriterFilter@4a1a256d, org.springframework.security.web.authentication.logout.LogoutFilter@22d7fd41, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@51e754e1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@61bb1e4d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@834e986, org.springframework.security.web.session.SessionManagementFilter@79e7188e, org.springframework.security.web.access.ExceptionTranslationFilter@78910096]
+[WARN ] 2021-08-16T05:10:13,146 [main] ArchaiusAutoConfiguration - No spring.application.name found, defaulting to 'application'
+[WARN ] 2021-08-16T05:10:13,155 [main] URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+[WARN ] 2021-08-16T05:10:13,167 [main] URLConfigurationSource - No URLs will be polled as dynamic configuration sources.
+[INFO ] 2021-08-16T05:10:13,338 [main] ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+[INFO ] 2021-08-16T05:10:14,014 [main] DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] 2021-08-16T05:10:14,022 [main] DispatcherServlet - Completed initialization in 8 ms
+[INFO ] 2021-08-16T05:10:14,074 [main] JettyWebServer - Jetty started on port(s) 8080 (http/1.1) with context path '/'
+[INFO ] 2021-08-16T05:10:14,075 [main] OnStartupService - Connecting to corda...
+[INFO ] 2021-08-16T05:10:14,077 [main] CordaService - Attempting upstream RPC to node: 'localhost:10021'
+[INFO ] 2021-08-16T05:10:18,184 [main] CordaService - Successful connection. Creating proxy...
+[DEBUG] 2021-08-16T05:10:18,184 [main] CordaService - [BaseCordaService] Corda connection available, initializing!
+[INFO ] 2021-08-16T05:10:18,185 [main] OnStartupService - Corda connected!
+[INFO ] 2021-08-16T05:10:18,191 [main] CbdcApplication$Companion - Started CbdcApplication.Companion in 8.203 seconds (JVM running for 10.087)
+[INFO ] 2021-08-16T05:16:10,941 [SpringContextShutdownHook] ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'

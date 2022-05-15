@@ -1,0 +1,5 @@
+rootProject.name = 'cbdc'
+include 'cbdc-contract'
+include 'cbdc-flow'
+include 'cbdc-application'
+include 'cbdc-api-test'

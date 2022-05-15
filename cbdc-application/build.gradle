@@ -1,0 +1,73 @@
+apply plugin: 'kotlin-allopen'
+apply plugin: 'org.springframework.boot'
+
+configurations {
+    [apiElements, runtimeElements].each {
+        it.outgoing.artifacts.removeIf {
+            it.buildDependencies.getDependencies(null).contains(jar)
+        }
+        it.outgoing.artifact(bootJar)
+    }
+}
+
+dependencies {
+    // Corda dependencies.
+    api "$corda_release_group:corda-rpc:$corda_release_version"
+
+    // CorDapp dependencies.
+    api project(":cbdc-flow")
+    api project(":cbdc-contract")
+    api project(":api-interface")
+
+    api "org.springframework.boot:spring-boot-starter-web"
+    api "org.springframework.boot:spring-boot-starter-security"
+    api "org.springframework.boot:spring-boot-starter-jetty"
+    api "org.springframework:spring-tx:$spring_version"
+    implementation "org.springframework.boot:spring-boot-starter-log4j2"
+
+    implementation "com.fasterxml.jackson.core:jackson-core"
+    implementation "com.fasterxml.jackson.module:jackson-module-kotlin"
+    implementation "org.apache.logging.log4j:log4j-slf4j-impl"
+    implementation "org.apache.logging.log4j:log4j-web"
+    implementation "org.apache.logging.log4j:log4j-core"
+    implementation "org.slf4j:jul-to-slf4j:$slf4j_version"
+    // Required by artemis client but erroneously excluded by Spring Boot BOM
+    // See https://github.com/spring-projects/spring-boot/commit/5bbdca8cdb9#diff-7545f53c6944fe9e55909610192af07a
+    implementation "javax.json:javax.json-api:1.1.4"
+
+    testApi "org.springframework.boot:spring-boot-test:$spring_boot_version"
+    testApi "org.springframework.boot:spring-boot-test-autoconfigure:$spring_boot_version"
+    testApi "org.springframework:spring-test:$spring_version"
+    testApi "org.junit.jupiter:junit-jupiter-api:$junit_version"
+    testApi "org.junit.jupiter:junit-jupiter-params:$junit_version"
+    testImplementation "org.junit.jupiter:junit-jupiter-engine:$junit_version"
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:2.1.0" // corda-test-utils uses the old version of mockito
+}
+
+configurations {
+    compile.exclude module: "spring-boot-starter-tomcat"
+}
+
+springBoot {
+    mainClassName = "cbdc.corda.middleware.CbdcApplication"
+}
+
+// jar {
+//     enabled = true
+// }
+
+artifactoryPublish {
+    dependsOn bootJar
+}
+
+// printArtifacts {
+//     // Required by hamster
+//     dependsOn jar
+// }
+
+/* This task will start the springboot server that connects to your node (via RPC connection). */
+task runPartyAServer(type: JavaExec, dependsOn: assemble) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = 'cbdc.corda.middleware.CbdcApplicationKt'
+    args '--server.port=10011', '--corda.rpc.url=localhost:10021', '--corda.rpc.username=user1', '--corda.rpc.password=test'
+}

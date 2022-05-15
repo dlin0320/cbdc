@@ -1,0 +1,36 @@
+apply plugin: 'kotlin-spring'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    api project(":cbdc-application")
+
+    testImplementation "com.fasterxml.jackson.module:jackson-module-kotlin"
+    testApi "org.springframework.cloud:spring-cloud-starter-openfeign:$spring_boot_version"
+    testApi "io.github.openfeign:feign-okhttp:11.0"
+
+    testApi "org.springframework.boot:spring-boot-test:$spring_boot_version"
+    testApi "org.springframework.boot:spring-boot-test-autoconfigure:$spring_boot_version"
+    testApi "org.springframework:spring-test:$spring_version"
+
+    testApi "org.junit.jupiter:junit-jupiter-api:$junit_version"
+    testApi "org.junit.jupiter:junit-jupiter-params:$junit_version"
+    testImplementation "org.junit.jupiter:junit-jupiter-engine:$junit_version"
+}
+
+// disable bootJar for api tests
+tasks.getByName("bootJar") {
+    enabled = false
+}
+
+artifactoryPublish.skip = true
+
+test {
+    onlyIf { project.hasProperty('apiTest') }
+    outputs.upToDateWhen { false }
+
+    // Workaround for RestTemplate starting to fail after too many tests
+    // No idea why
+    forkEvery = 6
+}

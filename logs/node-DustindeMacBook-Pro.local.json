@@ -1,0 +1,1 @@
+{"loglevel":"INFO ","timestamp":"2021-07-13T03:58:44,916","thread":"SpringContextShutdownHook", "namespace":"ThreadPoolTaskExecutor","content":"Shutting down ExecutorService 'applicationTaskExecutor'"}

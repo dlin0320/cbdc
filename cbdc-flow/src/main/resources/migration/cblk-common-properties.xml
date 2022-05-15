@@ -1,0 +1,13 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!-- Put potential common properties here -->
+    <property name="_uuid" value="binary(255)" dbms="mssql,azure"/> <!-- Corda 4.1 on Liquibase stores UUIDs as this type for MSSQL by default -->
+    <property name="_uuid" value="uuid" dbms="postgresql"/>
+    <property name="_uuid" value="varbinary" dbms="h2"/> <!-- Not officially supported for production use by Contour -->
+    <property name="_uuid" value="raw(16)" dbms="oracle"/> <!-- Not officially supported by Contour -->
+    <property name="_currency" value="varchar(16)"/>
+    <property name="_amount" value="bigint" dbms="h2"/>
+    <property name="_amount" value="numeric(19, 2)" dbms="postgresql"/>
+</databaseChangeLog>

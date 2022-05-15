@@ -1,0 +1,495 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet author="liquibase-gradle (generated)" id="table-token">
+        <createTable tableName="token_state">
+            <column name="output_index" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="transaction_id" type="nvarchar(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="owner" type="nvarchar(128)"/>
+            <column name="quantity" type="${_amount}"/>
+            <column name="token" type="nvarchar(32)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-token1">
+        <createIndex indexName="IDXjma2p0dj82v8exny31wmxcrpw" tableName="token_state">
+            <column name="owner"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-token2">
+        <createIndex indexName="IDX1w6jrqxsy52jsjjpgxkgdoyep" tableName="token_state">
+            <column name="quantity"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-token3">
+        <createIndex indexName="IDX3lqllmcxwhmc7pf5gs0liwien" tableName="token_state">
+            <column name="token"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="table-wallet">
+        <createTable tableName="wallet_state">
+            <column name="output_index" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="transaction_id" type="nvarchar(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="linear_id" type="nvarchar(128)"/>
+            <column name="id" type="nvarchar(128)"/>
+            <column name="dn" type="nvarchar(128)"/>
+            <column name="balance" type="bigint"/>
+            <column name="balance_limit" type="bigint">
+                <constraints nullable="true"/>
+            </column>
+            <column name="total_count" type="bigint"/>
+            <column name="status_last_modified" type="datetime"/>
+            <column name="phone_number" type="nvarchar(128)"/>
+            <column name="type" type="int"/>
+            <column name="mcc" type="nvarchar(128)"/>
+            <column name="cert_txn_limit" type="bigint"/>
+            <column name="key_txn_limit" type="bigint"/>
+            <column name="cert_id" type="nvarchar(128)"/>
+            <column name="cert_pub_key" type="nvarchar(128)"/>
+            <column name="not_after" type="datetime"/>
+            <column name="pub_key" type="nvarchar(128)"/>
+            <column name="div_data" type="nvarchar(128)"/>
+            <column name="frozen" type="boolean"/>
+            <column name="disabled" type="boolean"/>
+            <column name="create_time" type="datetime"/>
+            <column name="setting_last_modified" type="datetime"/>
+            <column name="otp" type="nvarchar(128)"/>
+            <column name="otp_create_time" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-wallet1">
+        <createIndex indexName="IDX5fcadda6-cb6b-4b97-add0-563edc81b56f" tableName="wallet_state">
+            <column name="linear_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-wallet2">
+        <createIndex indexName="IDX9cfb1a10-6ce1-4f8f-abb5-fd9046cde2b3" tableName="wallet_state">
+            <column name="id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-wallet3">
+        <createIndex indexName="IDXfb3e13fd-f891-45ae-b106-2d0c9088badb" tableName="wallet_state">
+            <column name="dn"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-wallet4">
+        <createIndex indexName="IDXcef0b54f-5d1a-48d7-a235-0cb6dca16ed3" tableName="wallet_state">
+            <column name="balance"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-wallet5">
+        <createIndex indexName="wallet5" tableName="wallet_state">
+            <column name="balance_limit"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-wallet6">
+        <createIndex indexName="wallet6" tableName="wallet_state">
+            <column name="total_count"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-wallet7">
+        <createIndex indexName="wallet7" tableName="wallet_state">
+            <column name="status_last_modified"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-wallet8">
+        <createIndex indexName="wallet8" tableName="wallet_state">
+            <column name="phone_number"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-wallet9">
+        <createIndex indexName="wallet9" tableName="wallet_state">
+            <column name="type"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-wallet10">
+        <createIndex indexName="wallet10" tableName="wallet_state">
+            <column name="mcc"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-wallet11">
+        <createIndex indexName="wallet11" tableName="wallet_state">
+            <column name="cert_txn_limit"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-wallet12">
+        <createIndex indexName="wallet12" tableName="wallet_state">
+            <column name="key_txn_limit"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-wallet13">
+        <createIndex indexName="wallet13" tableName="wallet_state">
+            <column name="cert_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-wallet14">
+        <createIndex indexName="wallet14" tableName="wallet_state">
+            <column name="cert_pub_key"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-wallet15">
+        <createIndex indexName="wallet15" tableName="wallet_state">
+            <column name="not_after"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-wallet16">
+        <createIndex indexName="wallet16" tableName="wallet_state">
+            <column name="pub_key"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-wallet17">
+        <createIndex indexName="wallet17" tableName="wallet_state">
+            <column name="div_data"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-wallet18">
+        <createIndex indexName="wallet18" tableName="wallet_state">
+            <column name="frozen"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-wallet19">
+        <createIndex indexName="wallet19" tableName="wallet_state">
+            <column name="disabled"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-wallet20">
+        <createIndex indexName="wallet20" tableName="wallet_state">
+            <column name="create_time"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-wallet21">
+        <createIndex indexName="wallet21" tableName="wallet_state">
+            <column name="setting_last_modified"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-wallet22">
+        <createIndex indexName="wallet22" tableName="wallet_state">
+            <column name="otp"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-wallet23">
+        <createIndex indexName="wallet23" tableName="wallet_state">
+            <column name="otp_create_time"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="table-vault">
+        <createTable tableName="vault_state">
+            <column name="output_index" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="transaction_id" type="nvarchar(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="linear_id" type="nvarchar(128)"/>
+            <column name="id" type="nvarchar(128)"/>
+            <column name="type" type="int"/>
+            <column name="balance" type="bigint"/>
+            <column name="total_count" type="bigint"/>
+            <column name="status_last_modified" type="datetime"/>
+            <column name="vault_cert_id" type="nvarchar(128)"/>
+            <column name="vault_cert_pub_key" type="nvarchar(128)"/>
+            <column name="vault_cert_not_after" type="datetime"/>
+            <column name="agency_cert_id" type="nvarchar(128)"/>
+            <column name="agency_cert_pub_key" type="nvarchar(128)"/>
+            <column name="agency_cert_not_after" type="datetime"/>
+            <column name="seed_key" type="nvarchar(128)"/>
+            <column name="frozen" type="boolean"/>
+            <column name="disabled" type="boolean"/>
+            <column name="create_time" type="datetime"/>
+            <column name="setting_last_modified" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-vault1">
+        <createIndex indexName="vault1" tableName="vault_state">
+            <column name="linear_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-vault2">
+        <createIndex indexName="vault2" tableName="vault_state">
+            <column name="id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-vault3">
+        <createIndex indexName="vault3" tableName="vault_state">
+            <column name="type"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-vault4">
+        <createIndex indexName="vault4" tableName="vault_state">
+            <column name="balance"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-vault5">
+        <createIndex indexName="vault5" tableName="vault_state">
+            <column name="total_count"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-vault6">
+        <createIndex indexName="vault6" tableName="vault_state">
+            <column name="status_last_modified"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-vault7">
+        <createIndex indexName="vault7" tableName="vault_state">
+            <column name="vault_cert_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-vault8">
+        <createIndex indexName="vault8" tableName="vault_state">
+            <column name="vault_cert_pub_key"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-vault9">
+        <createIndex indexName="vault9" tableName="vault_state">
+            <column name="vault_cert_not_after"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-vault10">
+        <createIndex indexName="vault10" tableName="vault_state">
+            <column name="agency_cert_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-vault11">
+        <createIndex indexName="vault11" tableName="vault_state">
+            <column name="agency_cert_pub_key"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-vault12">
+        <createIndex indexName="vault12" tableName="vault_state">
+            <column name="agency_cert_not_after"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-vault13">
+        <createIndex indexName="vault13" tableName="vault_state">
+            <column name="seed_key"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-vault14">
+        <createIndex indexName="vault14" tableName="vault_state">
+            <column name="frozen"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-vault15">
+        <createIndex indexName="vault15" tableName="vault_state">
+            <column name="disabled"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-vault16">
+        <createIndex indexName="vault16" tableName="vault_state">
+            <column name="create_time"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-vault17">
+        <createIndex indexName="vault17" tableName="vault_state">
+            <column name="setting_last_modified"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="table-instruction">
+        <createTable tableName="instruction_state">
+            <column name="output_index" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="transaction_id" type="nvarchar(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="txn_id" type="nvarchar(128)"/>
+            <column name="sender_id" type="nvarchar(128)"/>
+            <column name="receiver_id" type="nvarchar(128)"/>
+            <column name="timestamp" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-instruction1">
+        <createIndex indexName="IDX4448eb55-4c2f-4b6c-892e-e6b99d64065a" tableName="instruction_state">
+            <column name="txn_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-instruction2">
+        <createIndex indexName="IDXc37d6b38-8131-480b-b56f-bbeed4e38fd2" tableName="instruction_state">
+            <column name="sender_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-instruction3">
+        <createIndex indexName="IDX83cf8eae-2e20-4491-b6b2-4cbe9b0c0e0e" tableName="instruction_state">
+            <column name="receiver_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="liquibase-gradle (generated)" id="idx-instruction4">
+        <createIndex indexName="IDX8e817cd3-d3ee-4084-b38c-67418a66cfda" tableName="instruction_state">
+            <column name="timestamp"/>
+        </createIndex>
+    </changeSet>
+    <changeSet id="liquibase-gradle (generated)" author="table-authorization">
+        <createTable tableName="authorization_state">
+            <column name="output_index" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="transaction_id" type="nvarchar(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="auth_id" type="nvarchar(128)"/>
+            <column name="operation" type="nvarchar(128)"/>
+            <column name="sender_id" type="nvarchar(128)"/>
+            <column name="authorized_agency_id" type="nvarchar(128)"/>
+            <column name="recipient_id" type="nvarchar(128)"/>
+            <column name="remark" type="nvarchar(128)"/>
+            <column name="void_remark" type="nvarchar(128)"/>
+            <column name="status" type="boolean"/>
+            <column name="create_time" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="liquibase-gradle (generated)" author="idx-authorization1">
+        <createIndex indexName="authorization1" tableName="authorization_state">
+            <column name="auth_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet id="liquibase-gradle (generated)" author="idx-authorization2">
+        <createIndex indexName="authorization2" tableName="authorization_state">
+            <column name="operation"/>
+        </createIndex>
+    </changeSet>
+    <changeSet id="liquibase-gradle (generated)" author="idx-authorization3">
+        <createIndex indexName="authorization3" tableName="authorization_state">
+            <column name="sender_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet id="liquibase-gradle (generated)" author="idx-authorization4">
+        <createIndex indexName="authorization4" tableName="authorization_state">
+            <column name="authorized_agency_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet id="liquibase-gradle (generated)" author="idx-authorization5">
+        <createIndex indexName="authorization5" tableName="authorization_state">
+            <column name="recipient_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet id="liquibase-gradle (generated)" author="idx-authorization6">
+        <createIndex indexName="authorization6" tableName="authorization_state">
+            <column name="remark"/>
+        </createIndex>
+    </changeSet>
+    <changeSet id="liquibase-gradle (generated)" author="idx-authorization7">
+        <createIndex indexName="authorization7" tableName="authorization_state">
+            <column name="void_remark"/>
+        </createIndex>
+    </changeSet>
+    <changeSet id="liquibase-gradle (generated)" author="idx-authorization8">
+        <createIndex indexName="authorization8" tableName="authorization_state">
+            <column name="status"/>
+        </createIndex>
+    </changeSet>
+    <changeSet id="liquibase-gradle (generated)" author="idx-authorization9">
+        <createIndex indexName="authorization9" tableName="authorization_state">
+            <column name="create_time"/>
+        </createIndex>
+    </changeSet>
+    <changeSet id="liquibase-gradle (generated)" author="table-number">
+        <createTable tableName="number_state">
+            <column name="output_index" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="transaction_id" type="nvarchar(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id" type="nvarchar(128)"/>
+            <column name="wallet_id" type="nvarchar(128)"/>
+            <column name="cvc" type="nvarchar(128)"/>
+            <column name="amount" type="bigint"/>
+            <column name="enabled" type="boolean"/>
+            <column name="create_time" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="liquibase-gradle (generated)" author="idx-number1">
+        <createIndex indexName="number1" tableName="number_state">
+            <column name="id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet id="liquibase-gradle (generated)" author="idx-number2">
+        <createIndex indexName="number2" tableName="number_state">
+            <column name="wallet_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet id="liquibase-gradle (generated)" author="idx-number3">
+        <createIndex indexName="number3" tableName="number_state">
+            <column name="cvc"/>
+        </createIndex>
+    </changeSet>
+    <changeSet id="liquibase-gradle (generated)" author="idx-number4">
+        <createIndex indexName="number4" tableName="number_state">
+            <column name="amount"/>
+        </createIndex>
+    </changeSet>
+    <changeSet id="liquibase-gradle (generated)" author="idx-number5">
+        <createIndex indexName="number5" tableName="number_state">
+            <column name="enabled"/>
+        </createIndex>
+    </changeSet>
+    <changeSet id="liquibase-gradle (generated)" author="idx-number6">
+        <createIndex indexName="number6" tableName="number_state">
+            <column name="create_time"/>
+        </createIndex>
+    </changeSet>
+    <changeSet id="liquibase-gradle (generated)" author="table-plan">
+        <createTable tableName="plan_state">
+            <column name="output_index" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="transaction_id" type="nvarchar(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="operation" type="nvarchar(128)"/>
+            <column name="amount_limit" type="bigint"/>
+            <column name="cert_allow" type="boolean"/>
+            <column name="key_allow" type="boolean"/>
+            <column name="remark" type="nvarchar(128)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="liquibase-gradle (generated)" author="idx-plan1">
+        <createIndex indexName="plan1" tableName="plan_state">
+            <column name="operation"/>
+        </createIndex>
+    </changeSet>
+    <changeSet id="liquibase-gradle (generated)" author="idx-plan4">
+        <createIndex indexName="plan4" tableName="plan_state">
+            <column name="amount_limit"/>
+        </createIndex>
+    </changeSet>
+    <changeSet id="liquibase-gradle (generated)" author="idx-plan5">
+        <createIndex indexName="plan5" tableName="plan_state">
+            <column name="cert_allow"/>
+        </createIndex>
+    </changeSet>
+    <changeSet id="liquibase-gradle (generated)" author="idx-plan6">
+        <createIndex indexName="plan6" tableName="plan_state">
+            <column name="key_allow"/>
+        </createIndex>
+    </changeSet>
+    <changeSet id="liquibase-gradle (generated)" author="idx-plan7">
+        <createIndex indexName="plan7" tableName="plan_state">
+            <column name="remark"/>
+        </createIndex>
+    </changeSet>
+    <changeSet id="liquibase-gradle (generated)" author="dummy-plan">
+        <createTable tableName="dummy_state">
+            <column name="output_index" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="transaction_id" type="nvarchar(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="id" type="nvarchar(128)"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="liquibase-gradle (generated)" author="idx-dummy1">
+        <createIndex indexName="dummy1" tableName="dummy_state">
+            <column name="id"/>
+        </createIndex>
+    </changeSet>
+</databaseChangeLog>
